@@ -3,172 +3,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0f11">
-  <title>Thời Gian Sống • Premium</title>
+  <meta name="theme-color" content="#0a0d10">
+  <title>Thời Gian Sống • V4 Avant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="bg"></div>
-  <div class="veil"></div>
+  <div class="shade"></div>
 
   <main class="shell">
     <header class="topbar">
-      <div class="brand-wrap">
+      <div>
         <div class="brand">MEMENTO</div>
-        <div class="subbrand">THỜI GIAN SỐNG • PREMIUM</div>
+        <div class="subbrand">THỜI GIAN SỐNG • V4 AVANT</div>
       </div>
-      <div class="top-actions">
+      <div class="top-right">
         <div class="date-pill">
           <span id="todayDate">—</span>
           <small id="todayWeekday">—</small>
         </div>
-        <button class="ghost-btn" id="drawerOpen">Cài đặt</button>
+        <button id="drawerOpen" class="ghost-btn">Tuỳ chỉnh</button>
       </div>
     </header>
 
     <section class="hero panel">
-      <div class="hero-main">
-        <div class="eyebrow">THỜI GIAN THẬT SỰ CÒN CÓ THỂ TẬN HƯỞNG</div>
-        <h1><span id="usableYears">0,0</span><small>năm</small></h1>
-        <p class="hero-sub">Còn lại để thức • tự do • trải nghiệm • sống theo lựa chọn của mình</p>
-        <p class="hero-copy" id="heroCopy">—</p>
-
-        <div class="hero-metrics">
-          <div class="metric-chip">
-            <span>NGÀY THẬT SỰ CÒN LẠI</span>
-            <strong id="usableDays">—</strong>
-          </div>
-          <div class="metric-chip">
-            <span>GIỜ THẬT SỰ CÒN LẠI</span>
-            <strong id="usableHours">—</strong>
-          </div>
-          <div class="metric-chip">
-            <span>THỜI GIAN TỰ DO / NGÀY</span>
-            <strong id="freeHours">—</strong>
-          </div>
+      <div class="hero-left">
+        <div class="eyebrow">THỜI GIAN THẬT SỰ CÒN ĐỂ SỐNG</div>
+        <div class="hero-number-wrap">
+          <div class="hero-number" id="usableYears">0,0</div>
+          <div class="hero-unit">NĂM</div>
         </div>
+        <div class="hero-support">≈ <span id="usableDays">—</span> ngày • <span id="usableHours">—</span> giờ thật sự còn lại</div>
+        <p class="hero-copy" id="heroCopy">—</p>
+        <div class="hero-formula" id="heroFormula">—</div>
       </div>
 
-      <div class="hero-side">
-        <div class="mini-panel current-stage-card">
-          <div class="eyebrow">GIAI ĐOẠN HIỆN TẠI</div>
-          <div class="stage-badge" id="currentStage">—</div>
-          <p id="currentStageDesc">—</p>
+      <div class="hero-right">
+        <div class="focus-card today">
+          <div class="card-kicker">HÔM NAY CÒN LẠI</div>
+          <div class="focus-big mono" id="todayClock">--:--</div>
+          <div class="progress"><i id="dayFill"></i></div>
+          <div class="split-row"><span id="dayPassed">Đã qua —</span><span id="dayRemain">Còn —</span></div>
         </div>
 
-        <div class="mini-panel vitality-card">
-          <div class="eyebrow">MỐC SUNG MÃN CÒN LẠI</div>
-          <div class="vitality-rows">
-            <div class="vitality-row gold"><span>Vàng</span><strong id="goldLeft">—</strong></div>
-            <div class="vitality-row silver"><span>Bạc</span><strong id="silverLeft">—</strong></div>
-            <div class="vitality-row bronze"><span>Đồng</span><strong id="bronzeLeft">—</strong></div>
-          </div>
+        <div class="focus-card total">
+          <div class="card-kicker">BẠN CÒN</div>
+          <div class="focus-main" id="lifeRemainMain">—</div>
+          <div class="focus-sub" id="lifeRemainSub">—</div>
+        </div>
+
+        <div class="focus-card prime">
+          <div class="card-kicker">SUNG MÃN NHẤT CÒN</div>
+          <div class="focus-main" id="primeRemainMain">—</div>
+          <div class="focus-sub" id="primeRemainSub">—</div>
         </div>
       </div>
     </section>
 
-    <section class="grid">
+    <section class="row-grid">
       <article class="panel stats-panel">
         <div class="panel-head">
           <div>
             <div class="eyebrow">THỜI GIAN LỊCH CÒN LẠI</div>
-            <h2>Quỹ thời gian tổng</h2>
+            <h2>Phần đời còn lại</h2>
           </div>
-          <div class="panel-note">Không hiển thị giây</div>
+          <div class="head-note">Không hiển thị giây</div>
         </div>
-
-        <div class="stats-grid">
-          <div class="stat-card"><strong id="statYears">—</strong><span>Năm</span></div>
-          <div class="stat-card"><strong id="statMonths">—</strong><span>Tháng</span></div>
-          <div class="stat-card"><strong id="statWeeks">—</strong><span>Tuần</span></div>
-          <div class="stat-card"><strong id="statDays">—</strong><span>Ngày</span></div>
-          <div class="stat-card"><strong id="statHours">—</strong><span>Giờ</span></div>
-          <div class="stat-card"><strong id="statMinutes">—</strong><span>Phút</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><strong id="statYears">—</strong><span>Năm</span></div>
+          <div class="stat-box"><strong id="statMonths">—</strong><span>Tháng</span></div>
+          <div class="stat-box"><strong id="statWeeks">—</strong><span>Tuần</span></div>
+          <div class="stat-box"><strong id="statDays">—</strong><span>Ngày</span></div>
+          <div class="stat-box"><strong id="statHours">—</strong><span>Giờ</span></div>
+          <div class="stat-box"><strong id="statMinutes">—</strong><span>Phút</span></div>
         </div>
-        <p class="exact" id="exactText">—</p>
+        <p class="exact-line" id="exactTotal">—</p>
       </article>
 
-      <article class="panel today-panel">
-        <div class="eyebrow">HÔM NAY CÒN LẠI</div>
-        <div class="today-clock" id="todayClock">--:--</div>
-        <div class="today-label">đến 00:00</div>
-        <div class="bar"><i id="dayFill"></i></div>
-        <div class="between">
-          <span id="dayPassed">Đã qua —</span>
-          <span id="dayRemain">Còn —</span>
-        </div>
-        <blockquote>“Một ngày qua đi, không trở lại.”</blockquote>
-      </article>
-
-      <article class="panel insight-panel">
-        <div class="eyebrow">24 GIỜ KHÔNG PHẢI 24 GIỜ ĐỂ SỐNG</div>
-        <div class="formula" id="formulaText">—</div>
-        <div class="bar large"><i id="freedomFill"></i></div>
-        <div class="insight-grid">
-          <div><span>Ngủ</span><strong id="sleepYears">— năm</strong></div>
-          <div><span>Sinh hoạt</span><strong id="routineYears">— năm</strong></div>
-          <div><span>Thời gian tự do</span><strong id="freePercent">—%</strong></div>
-        </div>
-        <p class="impact-copy" id="impactText">—</p>
-      </article>
-
-      <article class="panel config-panel">
+      <article class="panel prime-panel">
         <div class="panel-head">
           <div>
-            <div class="eyebrow">TÙY CHỈNH</div>
-            <h2>Thông số của bạn</h2>
+            <div class="eyebrow">VÙNG SUNG MÃN</div>
+            <h2>Vàng • Bạc là đẹp nhất</h2>
           </div>
         </div>
-        <div class="form-grid">
-          <label>Ngày sinh<input id="birth" type="date"></label>
-          <label>Tuổi dự kiến<input id="targetAge" type="number" min="1" max="130"></label>
-          <label>Ngủ / ngày<input id="sleepHours" type="number" min="0" max="23" step="0.5"></label>
-          <label>Ăn uống + sinh hoạt / ngày<input id="routineHours" type="number" min="0" max="23" step="0.5"></label>
-          <label>Mốc Vàng<input id="goldEnd" type="number" min="1" max="120"></label>
-          <label>Mốc Bạc<input id="silverEnd" type="number" min="1" max="120"></label>
-          <label>Mốc Đồng<input id="bronzeEnd" type="number" min="1" max="120"></label>
+        <div class="prime-grid">
+          <div class="mini gold"><span>VÀNG CÒN</span><strong id="goldLeft">—</strong></div>
+          <div class="mini silver"><span>BẠC CÒN</span><strong id="silverLeft">—</strong></div>
+          <div class="mini total-prime"><span>TỔNG SUNG MÃN CÒN</span><strong id="primeLeft">—</strong></div>
         </div>
-        <button class="primary-btn" id="saveBtn">ÁP DỤNG & LƯU</button>
-      </article>
-
-      <article class="panel stage-panel">
-        <div class="panel-head">
-          <div>
-            <div class="eyebrow">CÁC CHẶNG CUỘC ĐỜI</div>
-            <h2>Vàng • Bạc • Đồng • Gỗ</h2>
-          </div>
-        </div>
-        <div class="stage-list">
-          <div class="stage-line gold">
-            <div><strong>Vàng</strong><small>0 - <span id="goldEndLabel">35</span> tuổi</small></div>
-            <span id="goldSummary">—</span>
-          </div>
-          <div class="stage-line silver">
-            <div><strong>Bạc</strong><small><span id="goldStartLabel">35</span> - <span id="silverEndLabel">50</span> tuổi</small></div>
-            <span id="silverSummary">—</span>
-          </div>
-          <div class="stage-line bronze">
-            <div><strong>Đồng</strong><small><span id="silverStartLabel">50</span> - <span id="bronzeEndLabel">65</span> tuổi</small></div>
-            <span id="bronzeSummary">—</span>
-          </div>
-          <div class="stage-line wood">
-            <div><strong>Gỗ</strong><small><span id="bronzeStartLabel">65</span> - <span id="targetAgeLabel">85</span> tuổi</small></div>
-            <span id="woodSummary">—</span>
-          </div>
-        </div>
+        <p class="prime-note" id="primeNote">—</p>
       </article>
     </section>
 
     <section class="panel timeline-panel">
-      <div class="panel-head">
+      <div class="panel-head timeline-head">
         <div>
           <div class="eyebrow">DÒNG THỜI GIAN CUỘC ĐỜI</div>
-          <h2>Trạng thái quỹ thời gian</h2>
+          <h2>Trạng thái hiện tại</h2>
         </div>
-        <div class="panel-note" id="timelineStatus">—</div>
+        <div class="status-badge"><span>HIỆN TẠI</span><strong id="currentStage">—</strong></div>
       </div>
 
       <div class="timeline-bar">
@@ -178,7 +115,6 @@
         <div class="seg wood" id="segWood"></div>
         <div class="marker" id="lifeMarker"></div>
       </div>
-
       <div class="timeline-ticks">
         <span>0</span>
         <span id="tickGold">35</span>
@@ -186,37 +122,39 @@
         <span id="tickBronze">65</span>
         <span id="tickTarget">85</span>
       </div>
-
-      <div class="legend">
-        <div class="legend-item gold"><i></i>Vàng</div>
-        <div class="legend-item silver"><i></i>Bạc</div>
-        <div class="legend-item bronze"><i></i>Đồng</div>
-        <div class="legend-item wood"><i></i>Gỗ</div>
+      <div class="timeline-legend">
+        <div class="legend gold"><i></i>Vàng</div>
+        <div class="legend silver"><i></i>Bạc</div>
+        <div class="legend bronze"><i></i>Đồng</div>
+        <div class="legend wood"><i></i>Gỗ</div>
       </div>
+      <p class="timeline-copy" id="timelineCopy">—</p>
     </section>
   </main>
 
   <aside class="drawer" id="drawer">
     <div class="drawer-head">
       <div>
-        <div class="eyebrow">GIỚI THIỆU</div>
-        <h3>Thời Gian Sống V3</h3>
+        <div class="eyebrow">TUỲ CHỈNH DỮ LIỆU</div>
+        <h3>Thông số của bạn</h3>
       </div>
-      <button class="ghost-btn small" id="drawerClose">Đóng</button>
+      <button id="drawerClose" class="ghost-btn small">Đóng</button>
     </div>
-    <p>
-      Đây là bản web premium dùng HTML/CSS/JS thuần, tối ưu để đưa lên GitHub Pages.
-      Dữ liệu chỉ lưu trên trình duyệt bằng <strong>localStorage</strong>.
-    </p>
-    <ul>
-      <li>Bỏ phần giây để giao diện sạch hơn</li>
-      <li>Có số tuần</li>
-      <li>Nhấn mạnh các chặng Vàng • Bạc • Đồng • Gỗ</li>
-      <li>Ưu tiên “thời gian thật sự để sống” hơn số đếm thô</li>
-    </ul>
-  </aside>
 
-  <div class="drawer-mask" id="drawerMask"></div>
+    <div class="form-grid">
+      <label>Ngày sinh<input id="birth" type="date"></label>
+      <label>Tuổi dự kiến<input id="targetAge" type="number" min="1" max="130"></label>
+      <label>Ngủ / ngày<input id="sleepHours" type="number" min="0" max="23" step="0.5"></label>
+      <label>Ăn uống + sinh hoạt / ngày<input id="routineHours" type="number" min="0" max="23" step="0.5"></label>
+      <label>Mốc Vàng<input id="goldEnd" type="number" min="1" max="120"></label>
+      <label>Mốc Bạc<input id="silverEnd" type="number" min="1" max="120"></label>
+      <label>Mốc Đồng<input id="bronzeEnd" type="number" min="1" max="120"></label>
+    </div>
+
+    <button id="saveBtn" class="primary-btn">ÁP DỤNG & LƯU</button>
+    <p class="drawer-note">Bản này ưu tiên 3 nội dung anh muốn nhìn rõ nhất: hôm nay còn bao nhiêu, phần đời còn bao nhiêu, và trong độ tuổi sung mãn nhất còn bao nhiêu.</p>
+  </aside>
+  <div id="mask" class="mask"></div>
 
   <script src="app.js"></script>
 </body>
