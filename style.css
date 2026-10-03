@@ -14,3 +14,5 @@ html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-f
 .reflection-list p{position:relative;margin:0;padding:15px 16px 15px 48px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line);font:500 16px/1.65 Prata,serif;color:#efe2cf}
 .reflection-list p span{position:absolute;left:16px;top:17px;font:700 10px/1 Manrope,sans-serif;letter-spacing:.12em;color:var(--gold2)}
 @media(max-width:760px){.reflection-list p{font-size:15px;line-height:1.6;padding:14px 14px 14px 44px}.reflection-list p span{left:14px;top:16px}}
+
+.row-grid{grid-template-columns:1fr}
